@@ -1,6 +1,6 @@
 # MentorKonnect
 ## Overview
-Native android application built with Kotlin and XML to Mentees with Mentors and get guidance.
+Native android application built with Kotlin and XML to Mentees with Mentors and get guidance related to Career, Education, etc.
 ## Features
 * verified Account for Mentors and Optionally Anonymous account for Mentees
 * Mentees can create public posts regarding their Query/Problems and tag Mentors
