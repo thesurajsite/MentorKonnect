@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:background="#000000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/mentor_profile_image"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circular_background"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sunny Kumar"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"/> <!-- White text color -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 hours ago"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sir, can you please tell me what is more important for placements: DSA or Development ? Someone says DSA is more important, someone says Development. I am so confused, please mentor me."
+                android:textColor="#FFFFFF"
+                android:paddingLeft="5dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"/>
+
+            <!-- res/layout/tagged_mentors_layout.xml -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Tagged Mentors Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tagged Mentors:"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+                <!-- Horizontal Bar with Tagged Mentors -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- User 1 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Suraj Verma"
+                        android:textColor="@color/white"
+                        android:background="@drawable/circular_background"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginEnd="8dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rajdeep Malakar"
+                        android:textColor="@color/white"
+                        android:background="@drawable/circular_background"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginEnd="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/reactions_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/thumbsup_icon"
+                    android:backgroundTint="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/likeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="482"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="4dp"/>
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/repost_button"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/reply_button"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/hand_icon"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/white"/>
+            </LinearLayout>
+            <View
+                android:visibility="visible"
+                android:id="@+id/horizontalLine"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/white"
+                android:layout_marginTop="16dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:background="#000000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#000000"> <!-- A slightly lighter background for the quoted tweet -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/mentor_ProfileImage"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/profile_image"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Suraj Verma"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/quotedTimestamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/quotedTweetContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Actually,  both are important. In bigger companies like Google, Facebook, Amazon, DSA is given more preference and in smaller companies like Startups, Recruiters focus more on Developemnt and your projects. "
+                    android:textColor="#FFFFFF"/> <!-- White text color -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="40dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/circular_background"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="30dp"
+                        android:layout_height="26dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/circular_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mentor_profile_image" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sunny Kumar"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+
+                        <TextView
+                            android:id="@+id/timestamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tweetContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Sir, can you please tell me what is more important for placements: DSA or Development ? Someone says DSA is more important, someone says Development. I am so confused, please mentor me."
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/thumbsup_icon"
+                    android:backgroundTint="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="482"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="4dp"/>
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/repost_button"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/reply_button"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/white"/>
+
+
+                <Button
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/heart_icon"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="108"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="4dp"/>
+
+
+
+            </LinearLayout>
+
+            <View
+                android:visibility="visible"
+                android:id="@+id/horizontalLine2"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/white"
+                android:layout_marginTop="16dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

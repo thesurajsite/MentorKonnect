@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "752855325126",
+    "project_id": "mentorkonnect-60476",
+    "storage_bucket": "mentorkonnect-60476.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752855325126:android:758a59ce8eeceb28cfbac7",
+        "android_client_info": {
+          "package_name": "com.mentorkonnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhlgQlEKs1TFApI1p6CSLsHvKQfbaPiok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
