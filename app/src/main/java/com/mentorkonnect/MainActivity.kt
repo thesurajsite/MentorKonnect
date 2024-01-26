@@ -1,5 +1,6 @@
 package com.mentorkonnect
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -32,6 +33,14 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.replace(R.id.fragmentContainer, mentor_profile())
             //fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
+        }
+
+        add_button.setOnClickListener {
+            val fragmentTransaction = supportFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentContainer, create_post_mentee())
+            //fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+
         }
 
     }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:background="#000000">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Post"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+    <!-- Post Content Input -->
+    <EditText
+        android:id="@+id/etPostContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="30dp"
+        android:hint="What's Going On ?"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="10dp"
+        android:background="@drawable/custom_input"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:hint="Tag Mentors"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="30dp"
+        android:background="@drawable/custom_input"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Create Post Button -->
+    <Button
+        android:id="@+id/btnCreatePost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Post"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>

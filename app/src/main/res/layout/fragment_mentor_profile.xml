@@ -67,14 +67,28 @@
             android:background="@color/black"
             />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="22 Thanks"
-            android:textColor="@color/white"
-            android:background="@color/black"
-            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="22 Thanks"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/heart_icon"
+                android:layout_gravity="center_vertical"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <!-- About Section TextView -->
