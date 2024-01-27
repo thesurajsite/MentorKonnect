@@ -33,30 +33,63 @@ class Edit_Profile : AppCompatActivity() {
         val progressBar=findViewById<ProgressBar>(R.id.Progressbar)
 
 
+        progressBar.visibility=ProgressBar.VISIBLE
+        db.collection(USER_INFO).document(USER).get()
+            .addOnSuccessListener {
+                val name=it.get(NAME).toString()
+                val bio=it.get(BIO).toString()
+
+                userName.setText(name)
+                userBio.setText(bio)
+
+                progressBar.visibility=ProgressBar.INVISIBLE
+//                Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
+
+            }
+            .addOnFailureListener {
+                userName.setText("Anonymous")
+                userBio.setText("No Bio")
+                Toast.makeText(this, "not done", Toast.LENGTH_SHORT).show()
+                progressBar.visibility=ProgressBar.INVISIBLE
+
+
+            }
+
+
         saveChanges.setOnClickListener {
 
             progressBar.visibility=ProgressBar.VISIBLE
 
 //            Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
-            val name=userName.text.toString()
-            val bio=userBio.text.toString()
+            var name=userName.text.toString()
+            var bio=userBio.text.toString()
 
-            val map= mutableMapOf<String, String>()
-            map.put(NAME, name)
-            map.put(BIO, bio)
-            db.collection(USER_INFO).document(USER).set(map)
-                .addOnSuccessListener {
-                    progressBar.visibility=ProgressBar.INVISIBLE
-                    Toast.makeText(this, "Changes Saved Successfully", Toast.LENGTH_SHORT).show()
+            if(name.isNotEmpty())
+            {
+                val map= mutableMapOf<String, String>()
+                map.put(NAME, name)
+                map.put(BIO, bio)
+                db.collection(USER_INFO).document(USER).set(map)
+                    .addOnSuccessListener {
+                        progressBar.visibility=ProgressBar.INVISIBLE
+                        Toast.makeText(this, "Changes Saved Successfully", Toast.LENGTH_SHORT).show()
 
 
-                }
-                .addOnFailureListener {
-                    progressBar.visibility=ProgressBar.INVISIBLE
-                    Toast.makeText(this, "Error: $it", Toast.LENGTH_SHORT).show()
-                }
+                    }
+                    .addOnFailureListener {
+                        progressBar.visibility=ProgressBar.INVISIBLE
+                        Toast.makeText(this, "Error: $it", Toast.LENGTH_SHORT).show()
+                    }
+
+
+            }
+
+
+
 
         }
+
+
 
 
 

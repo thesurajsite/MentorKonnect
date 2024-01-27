@@ -18,13 +18,13 @@
 
     <!-- User Name -->
     <TextView
-        android:id="@+id/username"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/userImage"
         android:layout_centerInParent="true"
         android:layout_marginTop="16dp"
-        android:text="Suraj Verma"
+        android:text="Anonymous"
         android:textColor="@color/white"
         android:textSize="30sp" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text=" Mentor Account "
         android:textColor="@color/black"
-        android:layout_below="@id/username"
+        android:layout_below="@id/userName"
         android:layout_centerHorizontal="true"
         android:padding="2dp"
         android:layout_marginBottom="33dp"
@@ -44,7 +44,7 @@
         android:id="@+id/follower_followin_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/username"
+        android:layout_below="@id/userName"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
         >
@@ -93,13 +93,13 @@
 
     <!-- About Section TextView -->
     <TextView
-        android:id="@+id/aboutSection"
+        android:id="@+id/userBio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_below="@id/follower_followin_layout"
         android:textColor="@color/white"
-        android:text="NIT-A'26 || Android Developer (Kotlin and Java) || Building CollegeTracker in Public || 1⭐️ @CodeChef || NewBie @CodeForces || Content Creator @YouTube"
+        android:text="Loading Bio..."
         android:textSize="20sp"/>
 
     <Button
@@ -113,7 +113,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
-        android:layout_below="@id/aboutSection"
+        android:layout_below="@id/userBio"
         />
 
     <Button
@@ -128,6 +128,18 @@
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:layout_below="@id/edit_profile_btn"
+        />
+
+    <ProgressBar
+        android:id="@+id/Progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:indeterminate="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:layout_below="@id/logout_btn"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         />
 
 
