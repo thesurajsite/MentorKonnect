@@ -102,5 +102,33 @@
         android:text="NIT-A'26 || Android Developer (Kotlin and Java) || Building CollegeTracker in Public || 1⭐️ @CodeChef || NewBie @CodeForces || Content Creator @YouTube"
         android:textSize="20sp"/>
 
+    <Button
+        android:id="@+id/edit_profile_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_below="@id/aboutSection"
+        />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_below="@id/edit_profile_btn"
+        />
+
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.text.method.PasswordTransformationMethod
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,13 +33,30 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
-        login_btn.setOnClickListener {
-            val intent= Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
 
         signup_btn.setOnClickListener {
-            val intent=Intent(this, MainActivity::class.java)
+            val email=email_et.text.toString()
+            val password=password_et.text.toString()
+            val confirmPassword=confirmPassword_et.text.toString()
+
+            if(email.isNotEmpty() && password.isNotEmpty() && password==confirmPassword)
+            {
+                MainActivity.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
+                    if(it.isSuccessful){
+                        Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    }
+                }.addOnFailureListener{
+                    Toast.makeText(this, it.localizedMessage, Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        }
+
+
+        login_btn.setOnClickListener {
+            val intent= Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

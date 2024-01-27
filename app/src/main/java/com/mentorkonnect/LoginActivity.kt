@@ -7,6 +7,7 @@ import android.text.method.PasswordTransformationMethod
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +36,22 @@ class LoginActivity : AppCompatActivity() {
         }
 
         login_btn.setOnClickListener {
-            val intent=Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            val email=email_et.text.toString()
+            val password=password_et.text.toString()
+
+            if(email.isNotEmpty() && password.isNotEmpty())
+            {
+                MainActivity.auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                    if(it.isSuccessful){
+                        Toast.makeText(this, "Logged In Successfully", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    }
+                }.addOnFailureListener{
+                    Toast.makeText(this, it.localizedMessage, Toast.LENGTH_SHORT).show()
+                }
+
+            }
         }
 
 
