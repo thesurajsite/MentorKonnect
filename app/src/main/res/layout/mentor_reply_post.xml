@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Actually,  both are important. In bigger companies like Google, Facebook, Amazon, DSA is given more preference and in smaller companies like Startups, Recruiters focus more on Developemnt and your projects. "
-            android:textColor="#FFFFFF"/> <!-- White text color -->
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 
     <LinearLayout

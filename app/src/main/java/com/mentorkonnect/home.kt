@@ -31,8 +31,8 @@ class home : Fragment() {
         val floatingActionButton=view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
 
 
-        arrPosts.add(MentorPostModel(R.drawable.mentor_profile_image,"Sunny Kumar","Sir, can you please tell me what is more important for placements: DSA or Development ? Someone says DSA is more important, someone says Development. I am so confused, please mentor me."))
-        arrPosts.add(MentorPostModel(R.drawable.profile_image,"Suraj Verma","Hey There, welcome to the MentorKonnect App, This is Suraj Verma here and if you have any problem and need my help, just create a post and tag me, i will try my best to Help You"))
+//        arrPosts.add(MentorPostModel(R.drawable.mentor_profile_image,"Sunny Kumar","Sir, can you please tell me what is more important for placements: DSA or Development ? Someone says DSA is more important, someone says Development. I am so confused, please mentor me."))
+//        arrPosts.add(MentorPostModel(R.drawable.profile_image,"Suraj Verma","Hey There, welcome to the MentorKonnect App, This is Suraj Verma here and if you have any problem and need my help, just create a post and tag me, i will try my best to Help You"))
 
         feedRecyclerView.adapter = feedRecyclerAdapter
         feedRecyclerView.layoutManager= LinearLayoutManager(requireContext())

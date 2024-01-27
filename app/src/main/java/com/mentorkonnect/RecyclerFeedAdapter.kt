@@ -20,7 +20,8 @@ class RecyclerFeedAdapter(val context: Context,
                             val arrReply: ArrayList<ReplyPostModel>
                             ) : RecyclerView.Adapter<RecyclerFeedAdapter.ViewHolder>() {
 
-
+    private val VIEW_TYPE_POST = 1
+    private val VIEW_TYPE_REPLY = 2
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
@@ -34,11 +35,6 @@ class RecyclerFeedAdapter(val context: Context,
         val HelpButton=itemView.findViewById<Button>(R.id.HelpButton)
     }
 
-    class newViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-
-
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
