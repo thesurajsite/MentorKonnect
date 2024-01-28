@@ -51,7 +51,7 @@ class RecyclerFeedAdapter(val context: Context,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.ProfileImage.setImageResource(arrPosts[position].profileImage)
+        //holder.ProfileImage.setImageResource(arrPosts[position].profileImage)
         holder.UserName.text=arrPosts[position].UserName
         holder.PostContent.text=arrPosts[position].PostContent
         
@@ -68,11 +68,11 @@ class RecyclerFeedAdapter(val context: Context,
             var profileImage1=R.drawable.profile_image
             var UserName1="Suraj Verma"
             var PostContent1=ReplyPostContent_String
-            var ProfileImage2=arrPosts[position].profileImage
+           // var ProfileImage2=arrPosts[position].profileImage
             var UserName2= arrPosts[position].UserName
             var PostContent2=arrPosts[position].PostContent
 
-            arrReply.add(ReplyPostModel(profileImage1,UserName1,PostContent1,ProfileImage2,UserName2,PostContent2))
+           // arrReply.add(ReplyPostModel(profileImage1,UserName1,PostContent1,ProfileImage2,UserName2,PostContent2))
 
 
 

@@ -20,7 +20,7 @@
             android:id="@+id/ProfileImage"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/person_image"
+            android:src="@drawable/person"
             android:scaleType="centerCrop"
             android:layout_marginEnd="16dp"
             android:background="@drawable/circular_background"/>
