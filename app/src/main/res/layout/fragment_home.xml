@@ -255,6 +255,7 @@
                             android:textColor="#FFFFFF"/>
 
                         <TextView
+                            android:visibility="invisible"
                             android:id="@+id/quotedTimestamp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

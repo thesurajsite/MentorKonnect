@@ -40,6 +40,7 @@
                 android:textColor="#FFFFFF"/> <!-- White text color -->
 
             <TextView
+                android:visibility="invisible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2 hours ago"
