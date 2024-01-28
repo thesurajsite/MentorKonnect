@@ -74,7 +74,6 @@ class Edit_Profile : AppCompatActivity() {
                         progressBar.visibility=ProgressBar.INVISIBLE
                         Toast.makeText(this, "Changes Saved Successfully", Toast.LENGTH_SHORT).show()
 
-
                     }
                     .addOnFailureListener {
                         progressBar.visibility=ProgressBar.INVISIBLE

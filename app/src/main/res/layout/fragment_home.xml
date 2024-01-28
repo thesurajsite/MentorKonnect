@@ -6,7 +6,17 @@
     android:background="@color/black"
     tools:context=".home">
 
-
+    <ProgressBar
+        android:id="@+id/Progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:indeterminate="true"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
 
 
     <androidx.recyclerview.widget.RecyclerView

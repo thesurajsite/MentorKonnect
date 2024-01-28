@@ -25,6 +25,7 @@ class mentor_profile : Fragment() {
     private val NAME="name"
     private val BIO="bio"
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +49,7 @@ class mentor_profile : Fragment() {
         edit_profile.setOnClickListener {
             startActivity(Intent(context, Edit_Profile::class.java))
         }
+
 
         progressBar.visibility= ProgressBar.VISIBLE
         db.collection(USER_INFO).document(USER).get()

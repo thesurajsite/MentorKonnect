@@ -7,14 +7,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 
 class home : Fragment() {
+
+    private val db: FirebaseFirestore by lazy { Firebase.firestore}
+
+    private val USER= MainActivity.auth.currentUser?.uid.toString()
+    private val USER_INFO="UserInfo"
+    private val NAME="name"
+    private val BIO="bio"
+    private val POST_CONTENT="post_content"
+    private val USER_ID="userID"
+    private val USER_POSTS="userPosts"
+    private lateinit var name: String
 
 
     override fun onCreateView(
@@ -29,6 +45,7 @@ class home : Fragment() {
         val feedRecyclerView = view.findViewById<RecyclerView>(R.id.feedRecyclerView)
         val feedRecyclerAdapter = RecyclerFeedAdapter(requireContext(), arrPosts, arrReply)
         val floatingActionButton=view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        val progressBar=view.findViewById<ProgressBar>(R.id.Progressbar)
 
 
 //        arrPosts.add(MentorPostModel(R.drawable.mentor_profile_image,"Sunny Kumar","Sir, can you please tell me what is more important for placements: DSA or Development ? Someone says DSA is more important, someone says Development. I am so confused, please mentor me."))
@@ -46,14 +63,58 @@ class home : Fragment() {
 
             createPost_btn.setOnClickListener {
 
+                progressBar.visibility=ProgressBar.VISIBLE
                 val postContent=dialog.findViewById<TextView>(R.id.PostContent)
                 val postContent_String:String=postContent.text.toString()
 
-                arrPosts.add(MentorPostModel(R.drawable.profile_image,"Suraj Verma",postContent_String))
-                feedRecyclerAdapter.notifyItemChanged(arrPosts.size-1)
-                feedRecyclerView.scrollToPosition(arrPosts.size-1)
-                dialog.dismiss()
+
+                // SAVING POST DATA TO THE FIREBASE //
+                if(postContent_String.isNotEmpty())
+                {
+                    val map= mutableMapOf<String, String>()
+                    map.put(NAME, name)
+                    map.put(POST_CONTENT, postContent_String)
+                    map.put(USER_ID, USER)
+
+                    db.collection(USER_POSTS).document().set(map)
+                        .addOnSuccessListener {
+                            progressBar.visibility=ProgressBar.INVISIBLE
+                            Toast.makeText(context, "Post Created Successfully", Toast.LENGTH_SHORT).show()
+
+                            //RECYCLER VIEW
+                            arrPosts.add(MentorPostModel(R.drawable.profile_image,"Suraj Verma",postContent_String))
+                            feedRecyclerAdapter.notifyItemChanged(arrPosts.size-1)
+                            feedRecyclerView.scrollToPosition(arrPosts.size-1)
+                            dialog.dismiss()
+
+                        }
+                        .addOnFailureListener {
+                            progressBar.visibility=ProgressBar.INVISIBLE
+                            Toast.makeText(context, "Error: $it", Toast.LENGTH_SHORT).show()
+                        }
+
+                }
+
+
+
+
+
+
             }
+
+
+            // GETTING USER NAME FROM THE DATABASE AS SOON AS THE FAB IS CLICKED
+            db.collection(USER_INFO).document(USER).get()
+                .addOnSuccessListener {
+                    name=it.get(NAME).toString()
+
+                }
+                .addOnFailureListener {
+
+                    Toast.makeText(context, "Some Error Occured", Toast.LENGTH_SHORT).show()
+
+                }
+
 
 
         }
