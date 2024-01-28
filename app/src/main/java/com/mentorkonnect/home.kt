@@ -82,7 +82,7 @@ class home : Fragment() {
                             Toast.makeText(context, "Post Created Successfully", Toast.LENGTH_SHORT).show()
 
                             //RECYCLER VIEW
-                            arrPosts.add(MentorPostModel(R.drawable.profile_image,"Suraj Verma",postContent_String))
+                            arrPosts.add(MentorPostModel(R.drawable.person_image,name,postContent_String))
                             feedRecyclerAdapter.notifyItemChanged(arrPosts.size-1)
                             feedRecyclerView.scrollToPosition(arrPosts.size-1)
                             dialog.dismiss()
